@@ -6,6 +6,10 @@ dist
 .netlify
 .vinxi
 
+#.stylelintcache
+#.eslintcache
+#yarn.lock
+
 # dependencies
 /node_modules
 
