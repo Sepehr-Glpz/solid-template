@@ -1,1 +1,6 @@
 // root app styles
+@use "@/styles/global" as g;
+
+.def {
+    color: g.$default-color;
+}

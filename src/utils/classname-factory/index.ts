@@ -1,9 +1,13 @@
-import { mods, classList, element, factoryCreator } from "./types";
+import {
+  mods,
+  classList,
+  element,
+  factoryCreator,
+} from "@/utils/classname-factory/types";
 
 export const classNamesFactory: factoryCreator = (blockName: element) => {
   return function factory(arg0?: element | mods, mods?: mods): classList {
     let obj: classList = { [blockName]: true };
-
     if (typeof arg0 == "string") {
       const blockElement: element = `${blockName}__${arg0}`;
       obj = { [blockElement]: true };
@@ -14,7 +18,6 @@ export const classNamesFactory: factoryCreator = (blockName: element) => {
         };
       }
     }
-
     if (typeof arg0 == "object") {
       let toAdd: mods = { ...arg0 };
       if (typeof mods == "object") {
@@ -25,7 +28,6 @@ export const classNamesFactory: factoryCreator = (blockName: element) => {
         ...attachMods(blockName, toAdd),
       };
     }
-
     return obj;
   };
 };

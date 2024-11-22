@@ -1,18 +1,16 @@
 import globals from "globals";
 import js from "@eslint/js";
-import tseslint from "typescript-eslint";
-import solid from "eslint-plugin-solid/configs/typescript.js";
-import * as tsParser from "@typescript-eslint/parser";
+import tsEslint from "typescript-eslint";
+import solid from "eslint-plugin-solid/configs/typescript";
 import prettier from "eslint-plugin-prettier/recommended";
 
 export default [
   { languageOptions: { globals: globals.browser } },
   js.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tsEslint.configs.recommended,
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
-      parser: tsParser,
       parserOptions: {
         project: "./tsconfig.json",
       },
